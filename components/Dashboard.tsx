@@ -1,6 +1,7 @@
+// In Dashboard.tsx
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
 import { RevenueCard } from "./RevenueCard";
@@ -20,12 +21,27 @@ const mostOrderedFood: (Omit<FoodItem, 'img'> & { icon: React.ReactNode })[] = [
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   const revenueChartRef = useRef<HTMLCanvasElement>(null);
   const orderChartRef = useRef<HTMLCanvasElement>(null);
 
+  // Prevent scrolling when sidebar is open on mobile
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isSidebarOpen]);
+
   return (
-    <div className="flex h-screen bg-slate-50">
+    <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
@@ -34,6 +50,7 @@ export default function Dashboard() {
         <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
+          aria-hidden="true"
         />
       )}
 
@@ -43,21 +60,21 @@ export default function Dashboard() {
         <Header onMenuClick={() => setIsSidebarOpen(true)} />
 
         {/* Main Content */}
-        <main className="flex-1 overflow-auto p-6">
+        <main className="flex-1 overflow-auto p-4 sm:p-6">
           <div className="max-w-7xl mx-auto">
             {/* Page Title */}
-            <div className="flex justify-between items-center mb-8 px-4">
-              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <div className="mb-6 sm:mb-8 px-2 sm:px-4">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Dashboard</h1>
             </div>
 
             {/* Top Row: Revenue + Order Time */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
               <RevenueCard chartRef={revenueChartRef} />
               <OrderTimeCard chartRef={orderChartRef} />
             </div>
 
             {/* Bottom Row: Rating + Most Ordered + Order Stats */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 border-t border-gray-200">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
               <RatingCard />
               <MostOrderedCard foods={mostOrderedFood} />
               <OrderStatsCard />

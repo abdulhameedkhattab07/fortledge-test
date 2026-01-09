@@ -1,3 +1,4 @@
+// In Header.tsx
 "use client";
 
 import { Menu as MenuIcon, ChevronDown, Bell, Search, Utensils } from "lucide-react";
@@ -8,11 +9,11 @@ interface HeaderProps {
 
 export const Header = ({ onMenuClick }: HeaderProps) => {
   return (
-    <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-3">
+    <header className="bg-white border-b border-gray-200 px-3 sm:px-6 py-3 sticky top-0 z-30">
       <div className="flex items-center justify-between">
         <div className="flex items-center flex-1 max-w-4xl">
           <button
-            className="lg:hidden mr-2 sm:mr-4 text-gray-500 hover:text-gray-700 p-1 -ml-1"
+            className="lg:hidden mr-2 text-gray-500 hover:text-gray-700 p-1 -ml-1"
             onClick={onMenuClick}
             aria-label="Toggle menu"
           >
@@ -23,7 +24,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full h-9 sm:h-10 pl-3 pr-10 text-sm sm:text-base border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition-all"
+              className="w-full h-9 sm:h-10 pl-3 pr-9 text-sm sm:text-base border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition-all"
               aria-label="Search"
             />
             <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -44,7 +45,7 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
             aria-label="Notifications"
           >
             <Bell className="w-5 h-5" />
-            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-white text-[10px] font-medium flex items-center justify-center">
+            <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-500 rounded-full text-white text-[10px] font-medium flex items-center justify-center">
               3
             </span>
           </button>

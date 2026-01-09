@@ -37,45 +37,40 @@ export const OrderTimeCard = ({ chartRef }: OrderTimeCardProps) => {
   }, [chartRef]);
 
   return (
-    <div className="bg-white border-gray-900/20 border-t lg:border-t-0 p-6">
+    <div className="bg-white p-4 sm:p-6 border-t lg:border-t-0 border-gray-200">
       <div className="flex items-start justify-between mb-4">
         <div>
-          <p className="text-lg font-semibold text-gray-800 mb-1">Order Time</p>
-          <p className="text-sm text-gray-400">From 1-6 Dec, 2020</p>
+          <p className="text-base sm:text-lg font-semibold text-gray-800 mb-1">Order Time</p>
+          <p className="text-xs sm:text-sm text-gray-500">From 1-6 Dec, 2020</p>
         </div>
-        <button className="text-indigo-600 text-sm font-medium px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">
+        <button className="px-3 py-1.5 text-sm text-indigo-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
           View Report
         </button>
       </div>
 
-      <div className="flex flex-col items-center justify-center mt-6">
-        <div className="relative w-48 h-48 mb-6">
-          <canvas ref={chartRef}></canvas>
+      <div className="relative h-48 sm:h-56 md:h-64 flex items-center justify-center">
+        <canvas ref={chartRef} />
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+          <p className="text-sm sm:text-base font-medium text-gray-500">Afternoon</p>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-800">1,890</p>
+          <p className="text-xs text-gray-400">orders</p>
         </div>
+      </div>
 
-        <div className="flex items-center justify-center gap-6 w-full">
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-3 h-3 bg-indigo-600 rounded-full"></div>
-              <span className="text-sm text-gray-600">Afternoon</span>
+      <div className="grid grid-cols-3 gap-4 mt-4 sm:mt-6 pt-4 border-t border-gray-100">
+        {[
+          { label: "Afternoon", value: "40%", color: "bg-indigo-600" },
+          { label: "Evening", value: "32%", color: "bg-indigo-400" },
+          { label: "Morning", value: "28%", color: "bg-indigo-200" },
+        ].map((item, idx) => (
+          <div key={idx} className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-1">
+              <div className={`w-2.5 h-2.5 rounded-full ${item.color}`}></div>
+              <span className="text-xs text-gray-500">{item.label}</span>
             </div>
-            <span className="text-base font-bold text-gray-800">40%</span>
+            <p className="text-sm font-medium text-gray-800">{item.value}</p>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-3 h-3 bg-indigo-400 rounded-full"></div>
-              <span className="text-sm text-gray-600">Evening</span>
-            </div>
-            <span className="text-base font-bold text-gray-800">32%</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-3 h-3 bg-indigo-200 rounded-full"></div>
-              <span className="text-sm text-gray-600">Morning</span>
-            </div>
-            <span className="text-base font-bold text-gray-800">28%</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

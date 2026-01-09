@@ -83,24 +83,27 @@ export const OrderStatsCard = () => {
   }, []);
 
   return (
-    <div className="bg-white border-gray-900/20 border-t lg:border-t-0 p-6">
+    <div className="bg-white p-4 sm:p-6 border-t lg:border-t-0 border-gray-200">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
-          <PieChart className="w-6 h-6 text-indigo-500" />
+          <PieChart className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-500" />
           <div>
-            <p className="text-sm font-semibold text-gray-800">Order</p>
-            <p className="text-xs text-gray-600">Sales from 1-6 Dec, 2020</p>
+            <p className="text-sm sm:text-base font-semibold text-gray-800">Order</p>
+            <p className="text-xs text-gray-500">Sales from 1-6 Dec, 2020</p>
           </div>
         </div>
-        <button className="bg-gray-900/5 text-indigo-600 shadow px-4 rounded-sm py-2 text-sm">
+        <button className="px-3 py-1.5 text-sm text-indigo-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
           View Report
         </button>
       </div>
-
-      <p className="text-3xl font-bold text-gray-800 mb-2">2,568</p>
-      <p className="text-sm text-red-500 mb-2">↓ 2.1% vs last week</p>
-
-      <div className="h-66 -mx-6 px-6 py-10">
+      <div className="flex items-end justify-between mb-2">
+        <p className="text-2xl sm:text-3xl font-bold text-gray-800">2,568</p>
+        <p className="text-xs sm:text-sm text-red-500 flex items-center">
+          <span>↓</span>
+          <span className="ml-1">2.1% vs last week</span>
+        </p>
+      </div>
+      <div className="h-40 sm:h-48 -mx-2 sm:-mx-4">
         <canvas ref={chartRef} />
       </div>
     </div>
