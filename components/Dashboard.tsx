@@ -44,11 +44,10 @@ export default function Dashboard() {
 
         {/* Main Content */}
         <main className="flex-1 overflow-auto p-6">
-          <div className="max-w-7xl mx-auto px-2">
+          <div className="max-w-7xl mx-auto">
             {/* Page Title */}
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-8 px-4">
               <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-              <div className="text-sm text-gray-500">Tuesday 2 Feb, 2021</div>
             </div>
 
             {/* Top Row: Revenue + Order Time */}

@@ -83,7 +83,7 @@ export const OrderStatsCard = () => {
   }, []);
 
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white border-gray-900/20 border-t lg:border-t-0 p-6">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
           <PieChart className="w-6 h-6 text-indigo-500" />

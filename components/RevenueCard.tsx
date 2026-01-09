@@ -53,7 +53,7 @@ export const RevenueCard = ({ chartRef }: RevenueCardProps) => {
   }, [chartRef]);
 
   return (
-    <div className="bg-white p-6 lg:col-span-2 border-gray-900/20 border-r">
+    <div className="bg-white p-6 lg:col-span-2 border-gray-900/20 lg:border-r">
       <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-sm text-gray-500 mb-1">Revenue</p>

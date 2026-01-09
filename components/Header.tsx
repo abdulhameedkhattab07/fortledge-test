@@ -1,3 +1,5 @@
+"use client";
+
 import { Menu as MenuIcon, ChevronDown, Bell, Search, Utensils } from "lucide-react";
 
 interface HeaderProps {
@@ -6,36 +8,43 @@ interface HeaderProps {
 
 export const Header = ({ onMenuClick }: HeaderProps) => {
   return (
-    <header className="bg-white border-gray-900/20 border-b px-6 py-3.5">
+    <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-3">
       <div className="flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center flex-1 max-w-4xl">
           <button
-            className="lg:hidden mr-4 text-gray-500 hover:text-gray-700"
+            className="lg:hidden mr-2 sm:mr-4 text-gray-500 hover:text-gray-700 p-1 -ml-1"
             onClick={onMenuClick}
+            aria-label="Toggle menu"
           >
-            <MenuIcon size={20} />
+            <MenuIcon className="w-5 h-5" />
           </button>
 
-          <div className="relative w-full sm:max-w-xl">
+          <div className="relative w-full max-w-2xl">
             <input
               type="text"
               placeholder="Search"
-              className="sm:w-[625px] max-w-full h-[32px] pl-2 pr-10 py-4.5 text-sm border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-100 focus:border-indigo-300"
+              className="w-full h-9 sm:h-10 pl-3 pr-10 text-sm sm:text-base border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300 transition-all"
+              aria-label="Search"
             />
-            <Search size={20} className="absolute right-3 top-2 h-4 w-4 text-gray-400" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2 px-3 py-1.5 bg-orange-50 rounded-lg border border-orange-100">
-            <Utensils className="w-5 h-5 text-orange-500" />
-            <span className="text-sm font-medium">Delicious Burger</span>
-            <ChevronDown size={16} className="text-gray-500" />
+        <div className="flex items-center space-x-2 sm:space-x-3 ml-2 sm:ml-4">
+          <div className="hidden sm:flex items-center space-x-2 px-3 py-1.5 bg-orange-50 rounded-lg border border-orange-100">
+            <Utensils className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
+            <span className="text-xs sm:text-sm font-medium text-gray-800 whitespace-nowrap">
+              Delicious Burger
+            </span>
+            <ChevronDown className="w-4 h-4 text-gray-500" />
           </div>
 
-          <button className="relative p-1.5 rounded-full hover:bg-gray-100">
-            <Bell size={20} className="text-gray-600" />
-            <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-500 rounded-full text-[10px] font-medium text-white flex items-center justify-center">
+          <button 
+            className="relative p-1.5 rounded-full hover:bg-gray-100 text-gray-600 hover:text-gray-800 transition-colors"
+            aria-label="Notifications"
+          >
+            <Bell className="w-5 h-5" />
+            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-white text-[10px] font-medium flex items-center justify-center">
               3
             </span>
           </button>

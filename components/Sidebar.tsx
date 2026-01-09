@@ -34,7 +34,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <aside
       className={`${
-        isOpen ? "translate-x-0" : "-translate-x-full"
+        isOpen ? "translate-x-0 bg-white" : "-translate-x-full"
       } lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-50 w-64 shadow-sm transition-transform duration-300`}
     >
       <div className="flex items-center justify-between p-4 py-3.5 border-gray-900/20 border-b">

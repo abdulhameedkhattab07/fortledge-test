@@ -37,7 +37,7 @@ export const OrderTimeCard = ({ chartRef }: OrderTimeCardProps) => {
   }, [chartRef]);
 
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white border-gray-900/20 border-t lg:border-t-0 p-6">
       <div className="flex items-start justify-between mb-4">
         <div>
           <p className="text-lg font-semibold text-gray-800 mb-1">Order Time</p>

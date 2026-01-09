@@ -1,6 +1,6 @@
 // RatingCard.tsx
 export const RatingCard = () => (
-  <div className="bg-white p-6 border-gray-900/20 border-r">
+  <div className="bg-white p-6 border-gray-900/20 border-t lg:border-t-0 lg:border-r">
     <p className="text-lg font-semibold text-gray-800 mb-2">Your Rating</p>
     <p className="text-sm text-gray-400 mb-6">
       Lorem ipsum dolor sit amet, consectetur
