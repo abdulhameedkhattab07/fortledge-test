@@ -16,11 +16,11 @@ export const Header = ({ onMenuClick }: HeaderProps) => {
             <MenuIcon size={20} />
           </button>
 
-          <div className="relative w-full max-w-xl">
+          <div className="relative w-full sm:max-w-xl">
             <input
               type="text"
               placeholder="Search"
-              className="w-[625px] max-w-full h-[32px] pl-2 pr-10 py-4.5 text-sm border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-100 focus:border-indigo-300"
+              className="sm:w-[625px] max-w-full h-[32px] pl-2 pr-10 py-4.5 text-sm border border-gray-200 text-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-indigo-100 focus:border-indigo-300"
             />
             <Search size={20} className="absolute right-3 top-2 h-4 w-4 text-gray-400" />
           </div>

@@ -35,7 +35,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     <aside
       className={`${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-50 w-64 shadow-sm transition-transform duration-300 bg-white`}
+      } lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-50 w-64 shadow-sm transition-transform duration-300`}
     >
       <div className="flex items-center justify-between p-4 py-3.5 border-gray-900/20 border-b">
         <div className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-1 transition-colors ${
                 item.active
                   ? "bg-indigo-50 text-indigo-600 font-medium"
-                  : "text-gray-600 hover:bg-gray-50"
+                  : "text-gray-600 hover:bg-gray-150"
               }`}
             >
               <item.icon size={20} />
@@ -72,7 +72,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           {otherItems.map((item, idx) => (
             <button
               key={idx}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-1 text-gray-600 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-1 text-gray-600 hover:bg-gray-150 transition-colors"
             >
               <item.icon size={20} />
               <span className="text-sm">{item.label}</span>

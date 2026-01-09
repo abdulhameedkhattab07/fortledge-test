@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GoodFood Dashboard
 
-## Getting Started
+A modern, responsive dashboard for restaurant management built with Next.js 14+ and TypeScript.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Interactive Data Visualization
+- **Revenue Trends**: Grouped bar chart comparing "Last 6 days" vs "Last Week"
+- **Order Time Analysis**: Doughnut chart with percentage breakdown
+- **Order Statistics**: Smooth line chart comparing recent orders vs previous week
+- **Rating Visualization**: Custom overlapping circles with dashed borders
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### User Experience
+- **Fully Responsive**: Works on all device sizes
+- **Mobile-First Design**: Optimized for touch and small screens
+- **Accessibility**: Built with accessibility in mind
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Performance
+- ⚡ Fast page loads with Next.js static generation
+- 🎯 Optimized bundle size
+- 🔄 Efficient state management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Frontend Framework**: Next.js 14+ (App Router)
+- **UI Library**: React 18
+- **Type Safety**: TypeScript
+- **Styling**: Tailwind CSS
+- **Data Visualization**: Chart.js
+- **Icons**: Lucide React
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/abdulhameedkhattab07/fortledge-test.git
+   cd fortledge-test
+   ```
+  
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open http://localhost:3000 in  your browser
