@@ -68,7 +68,7 @@ export const RevenueCard = ({ chartRef }: RevenueCardProps) => {
           </div>
           <p className="text-xs text-gray-400 mt-1.5">Sales from 1-12 Dec, 2020</p>
         </div>
-        <button className="bg-gray-900/5 text-indigo-600 shadow px-4 rounded-sm py-2 text-sm">
+        <button className="px-3 py-1.5 text-sm text-indigo-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
           View Report
         </button>
       </div>
